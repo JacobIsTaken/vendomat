@@ -1,0 +1,186 @@
+* {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Roboto, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* Delete later */
+    outline: 1px solid white;
+}
+
+@font-face {
+    font-family: 'sevensegment';
+    src: url('seven_segment/seven_segment-webfont.woff2') format('woff2'),
+        url('seven_segment/seven_segment-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    aspect-ratio: 2/3;
+    background-image: url(media/background2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+    #products_display {
+        position: absolute;
+        left: 8.5%;
+        top: 2%;
+        width: 63%;
+        height: 60.8%;
+    }
+
+        #products_display td {
+            position: relative;
+            width: 10%;
+            text-align: center;
+        }
+
+        .product_image {
+            max-width: 60%;
+            max-height: 75%;
+        }
+        .product_spring{
+            position: absolute;
+            left: 0;
+            bottom: 16%;
+            max-width: 100%;
+        }
+
+        .product_label {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+            color: red;
+            background-color: black;
+            /* border-radius: 5px; */
+            overflow: hidden;
+            font-family: 'sevensegment', Arial, sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 80%;
+        }
+
+    #products_chute {
+        position: absolute;
+        left: 19%;
+        bottom: 17%;
+        width: 41%;
+        height: 9%;
+    }
+
+    #display {
+        position: absolute;
+        top: 5%;
+        left: 77%;
+        width: 14%;
+        height: 7%;
+        border: 2px solid black;
+        color: red;
+        background-color: black;
+        border-radius: 5px;
+        overflow: hidden;
+        font-family: 'sevensegment', Arial, sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: large;
+    }
+
+    #choose_product_menu {
+        position: absolute;
+        top: 36.5%;
+        left: 78%;
+        width: 12%;
+        height: 11%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #choose_product_menu>button {
+        width: 33%;
+        padding: 1px;
+    }
+
+    #choose_product_menu_enter {
+        position: absolute;
+        top: 49%;
+        left: 77.5%;
+        width: 13%;
+        height: 3%;
+    }
+
+    #choose_product_menu_enter>button {
+        width: 100%;
+    }
+
+    #change_chute {
+        position: absolute;
+        top: 64.5%;
+        left: 80%;
+        width: 8%;
+        height: 5%;
+    }
+
+    #inventory {
+        padding: 10px;
+        position: fixed;
+        top: 50px;
+        right: 0px;
+        background-color: blanchedalmond;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+table {
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+}
+
+.table_cell_1 {
+    width: 5%;
+    height: 10%;
+}
+
+.table_cell_2 {
+    width: 5%;
+    height: 10%;
+}
+
+.cursor_grab {
+    cursor: grab;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.cursor_wait {
+    cursor: wait;
+}
+
+#dev_div {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    color: white;
+    background-color: black;
+}
+    #dev_div span{
+        cursor: pointer;
+        padding: 2px;
+        background-color: gray;
+    }
