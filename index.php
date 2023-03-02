@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
     <title>Jacob Vending Machine</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Importowanie JQuerry i toastr -->
+    <!-- Importing JQuerry and toastr -->
     <link href="js/toastr/toastr.scss" rel="stylesheet" />
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/toastr/toastr.js"></script>
@@ -32,6 +32,8 @@
             "hideMethod": "fadeOut"
         }
     </script>
+    <!-- Importing vendomat functions -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -123,78 +125,18 @@
         </div>
         </div>
     </section>
-    <!-- DIV FUNCTIONS, disable later -->
+    <!-- DEV FUNCTIONS, delete later -->
     <div id="dev_div"><p>DEV functions</p><span onclick="randomise_products();">randomise_products();</span></br></br><span onclick="refresh_products_display();">refresh_products_display();</span></div>
     <script>
-        //Import Data from mysql #TODO
-        // Dummy data
-            products_array = [0, 0, 0, 0, 0, 3, 5, 0, 4, 0, 0, 2, 0, 4, 0, 0, 2, 0, 4, 0, 0, 2, 3, 0, 0, 2, 2, 3, 2, 0, 1, 0];
-            products_data = [[0, 'Lays', 5.2, 2], [1, 'Woda', 2.5, 1], [2, 'Dorritos', 6.5, 2], [3, 'Fanta', 4.0, 1], [4, 'Popcorn', 3.0, 2], [5, 'Snickers', 3.5, 1]];
         // DEV FUNCTIONS
-            function randomise_products(){
-                for (let i = 0; i < 32; i++) {
-                    products_array[i] = 0;
-                    if(Math.round(Math.random(1))==1){
-                        products_array[i] = parseInt(Math.round(Math.random(1)*(products_data.length-1)));
-                    }
-                }
-                refresh_products_display();
-            }
-        // Vendomat functions
-        function refresh_products_display(){
+        function randomise_products(){
             for (let i = 0; i < 32; i++) {
-
-                // if(products_array[i]!=0){
-                //     // If current products width is 1 then fill all 16
-                //     if(i >= 0 && i <= 15){
-                //         if(products_data[products_array[i]][3]==1){
-                //             document.getElementById("p"+i).innerHTML = "<img class='product_image' src='media/p"+products_array[i]+".png' alt='product'><span class='product_label'>"+i+"; "+products_data[products_array[i]][2].toFixed(2)+"</span>";
-                //         }
-                //     }
-                //     // If current products width is 2 then fill all 8
-                //     if(i >= 16 && i <= 23){
-                //         // Width 1
-                //         if(products_data[products_array[i]][3]==2){
-                //             document.getElementById("p"+i).innerHTML = "<img class='product_image' src='media/p"+products_array[i]+".png' alt='product'><span class='product_label'>"+i+"; "+products_data[products_array[i]][2].toFixed(2)+"</span>";
-                //         }
-                //     }
-                //     if(i >= 24 && i <= 31){
-                //         if(products_data[products_array[i]][3]==1){
-                //                 document.getElementById("p"+i).innerHTML = "<img class='product_image' src='media/p"+products_array[i]+".png' alt='product'><span class='product_label'>"+i+"; "+products_data[products_array[i]][2].toFixed(2)+"</span>";
-                //         }
-                //     }
-                // }
-                // else{
-                //     document.getElementById("p"+i).innerHTML = "";
-                // }
-
-                // Optimized CHAT-GPT code <3 for displaying
-                if (products_array[i] != 0) {
-                    const product = products_data[products_array[i]];
-                    const isWidth1 = product[3] == 1;
-                    const element = document.getElementById("p" + i);
-
-                    if ((i >= 0 && i <= 15) || (i >= 24 && i <= 31)) {
-                        if (isWidth1) {
-                        element.innerHTML = `<img class='product_image' src='media/p${products_array[i]}.png' alt='product'><span class='product_label'>${i}; ${product[2].toFixed(2)}</span><img class='product_spring' src='media/spring.png'>`;
-                        }
-                    } else if (i >= 16 && i <= 23) {
-                        if (!isWidth1) {
-                        element.innerHTML = `<img class='product_image' src='media/p${products_array[i]}.png' alt='product'><span class='product_label'>${i}; ${product[2].toFixed(2)}</span>`;
-                        }
-                    }
-                } else {
-                document.getElementById("p" + i).innerHTML = "";
+                products_array[i] = 0;
+                if(Math.round(Math.random(1))==1){
+                    products_array[i] = parseInt(Math.round(Math.random(1)*(products_data.length-1)));
                 }
             }
-        }
-        refresh_products_display();
-        function order_product(product){
-            // Spring animation
-            for (let i = 0; i < 360; i++) {
-                document.getElementById("p"+product).getElementsByClassName('product_spring').style.transform = "rotate("+i+"deg)";
-                
-            }
+            refresh_products_display();
         }
     </script>
 </body>
