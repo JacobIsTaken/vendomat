@@ -54,7 +54,7 @@ section {
         .product_spring{
             position: absolute;
             left: 0;
-            bottom: 16%;
+            bottom: 13%;
             max-width: 100%;
         }
 
@@ -97,8 +97,16 @@ section {
         font-weight: normal;
         font-style: normal;
         font-size: large;
-    }
+        animation: blinker 3s steps(2) infinite;
 
+    }
+        @keyframes blinker{
+            0%{color: red;}
+            /* 50%{color: black;} */
+            50%{color: rgb(calc(255/2), 0, 0);}
+            100%{color: red;}
+        }
+    
     #choose_product_menu {
         position: absolute;
         top: 36.5%;
