@@ -38,9 +38,15 @@
 
 <body>
     <div id="inventory">
-        Inventory:
+        <p>Your Items:</p>
+        <p>
+            <img src="media/change.svg" alt="money">
+            <span id="inventory_balance">100 zł</span>    
+        </p>
         <div>Items</div>
-        <div><img src="media/change.svg" alt="money">10 zł</div>
+        <!-- <div>
+            <img src="media/change.svg" alt="money">10 zł
+        </div> -->
     </div>
     <section>
         <div id="products_display">
@@ -106,29 +112,42 @@
         <div id="display">
             HELLO, SELECT PRODUCT
         </div>
-        <div id="choose_product_menu">
-            <button onclick="keypad_input(1);">1</button>
-            <button onclick="keypad_input(2);">2</button>
-            <button onclick="keypad_input(3);">3</button>
-            <button onclick="keypad_input(4);">4</button>
-            <button onclick="keypad_input(5);">5</button>
-            <button onclick="keypad_input(6);">6</button>
-            <button onclick="keypad_input(7);">7</button>
-            <button onclick="keypad_input(8);">8</button>
-            <button onclick="keypad_input(9);">9</button>
+        <div id="display_balance">
+            Balance: 0
         </div>
+        <div id="money_chute" onclick="insert_money();">
+        </div>
+
+        <div id="choose_product_menu">
+            <button onclick="keypad_input('1');">1</button>
+            <button onclick="keypad_input('2');">2</button>
+            <button onclick="keypad_input('3');">3</button>
+            <button onclick="keypad_input('4');">4</button>
+            <button onclick="keypad_input('5');">5</button>
+            <button onclick="keypad_input('6');">6</button>
+            <button onclick="keypad_input('7');">7</button>
+            <button onclick="keypad_input('8');">8</button>
+            <button onclick="keypad_input('9');">9</button>
+            <button></button>
+            <button onclick="keypad_input('0');">0</button>
+            <button></button>
+        </div>
+        <button id="clear_id_button" onclick="clear_id();">
+            CLEAR
+        </button>
         <div id="choose_product_menu_enter">
             <button onclick="order_product();">BUY</button>
         </div>
         <div id="change_chute" class="cursor-grab" onclick="claim_change();">
-            <img src="media/change.svg" alt="change" hidden>
+            <!-- <img src="media/change.svg" alt="change"> -->
         </div>
         </div>
     </section>
     <!-- DEV FUNCTIONS, delete later -->
-    <div id="dev_div"><p>DEV functions</p><span onclick="randomise_products();">randomise_products();</span></br></br><span onclick="refresh_products_display();">refresh_products_display();</span></div>
-    <script>
-        // DEV FUNCTIONS
+    <div id="dev_div">
+        <p>DEV functions</p><span onclick="randomise_products();">randomise_products();</span></br></br><span onclick="refresh_products_display();">refresh_products_display();</span></br></br><span onclick="clear_balance();">clear_balance();</span>
+    </div>
+    <script> // DEV FUNCTIONS
         function randomise_products(){
             for (let i = 0; i < 32; i++) {
                 products_array[i] = 0;
@@ -137,6 +156,9 @@
                 }
             }
             refresh_products_display();
+        }
+        function clear_balance(){ // Dev Sets balance to 0
+            vendomat_balance = 0;
         }
     </script>
 </body>

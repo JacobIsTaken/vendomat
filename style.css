@@ -1,7 +1,7 @@
 * {
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Roboto, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     /* Delete later */
-    outline: 1px solid white;
+    /* outline: 1px solid white; */
 }
 
 @font-face {
@@ -24,6 +24,21 @@ body {
     display: flex;
     justify-content: center;
 }
+
+#inventory {
+    overflow: auto;
+    padding: 10px;
+    position: fixed;
+    top: 5vh;
+    right: 0px;
+    height: 85vh;
+    background-color: blanchedalmond;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+    .inventory_image{
+        max-width: 5vw;
+    }
 
 section {
     position: relative;
@@ -71,7 +86,7 @@ section {
             font-family: 'sevensegment', Arial, sans-serif;
             font-weight: normal;
             font-style: normal;
-            font-size: 80%;
+            font-size: 73%;
         }
 
     #products_chute {
@@ -85,7 +100,7 @@ section {
     #display {
         position: absolute;
         top: 5%;
-        left: 77%;
+        left: 76.8%;
         width: 14%;
         height: 7%;
         border: 2px solid black;
@@ -98,7 +113,6 @@ section {
         font-style: normal;
         font-size: large;
         animation: blinker 3s steps(2) infinite;
-
     }
         @keyframes blinker{
             0%{color: red;}
@@ -106,6 +120,32 @@ section {
             50%{color: rgb(calc(255/2), 0, 0);}
             100%{color: red;}
         }
+
+    #display_balance{
+        position: absolute;
+        top: 17%;
+        left: 76.8%;
+        width: 14%;
+        height: 5%;
+        border: 2px solid black;
+        color: red;
+        background-color: black;
+        border-radius: 5px;
+        overflow: hidden;
+        font-family: 'sevensegment', Arial, sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: large;
+        /* animation: blinker 3s steps(2) infinite; */
+    }
+
+    #money_chute{
+        position: absolute;
+        top: 23%;
+        left: 79.5%;
+        width: 9%;
+        height: 9%;
+    }
     
     #choose_product_menu {
         position: absolute;
@@ -115,6 +155,14 @@ section {
         height: 11%;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    #clear_id_button{
+        position: absolute;
+        top: 52%;
+        left: 77.5%;
+        width: 13%;
+        height: 3%;
     }
 
     #choose_product_menu>button {
@@ -140,16 +188,6 @@ section {
         left: 80%;
         width: 8%;
         height: 5%;
-    }
-
-    #inventory {
-        padding: 10px;
-        position: fixed;
-        top: 50px;
-        right: 0px;
-        background-color: blanchedalmond;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
     }
 
 table {
